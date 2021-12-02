@@ -38,7 +38,7 @@ def load_image_into_numpy_array(path):
 
 MODELS_path = 'https://tfhub.dev/tensorflow/centernet/resnet101v1_fpn_512x512/1'
 
-PATH_TO_LABELS = './lables/mscoco_label_map.pbtxt'
+PATH_TO_LABELS = './labels/mscoco_label_map.pbtxt'
 category_index = label_map_util.create_category_index_from_labelmap(PATH_TO_LABELS, use_display_name=True)
 
 
