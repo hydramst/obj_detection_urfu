@@ -1,15 +1,15 @@
 ### Test repository for object detection basis on TF model faster_rcnn/resnet101
 
 # Overview
-Faster R-CNN with Resnet-101 (v1) initialized from Imagenet classification checkpoint. Trained on COCO 2017 dataset (images scaled to 1024x1024 resolution).
+Faster R-CNN with Resnet-101 (v1) initialized from Imagenet classification checkpoint. Trained on [COCO 2017](https://cocodataset.org/) dataset (images scaled to 1024x1024 resolution).
 
-Model created using the TensorFlow Object Detection API
+Model created using the [TensorFlow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection)
 
 An example detection result is shown below.![od_no_keypoints](https://user-images.githubusercontent.com/44744458/144443625-71ecfc4e-1e4b-4274-8177-ec406035f7fb.png)
 
 
 ## Example use
-# Apply image detector on a single image.
+### Apply image detector on a single image.
 
 ```python
   detector = hub.load("https://tfhub.dev/tensorflow/faster_rcnn/resnet101_v1_1024x1024/1")
@@ -39,8 +39,10 @@ This model is suitable for localizing the most prominent objects in an image.
 This model is unsuitable for standalone use in mission-critical applications such as obstacle and human detection for autonomous driving.
 
 # Source
-The model's checkpoints are publicly available as a part of the TensorFlow Object Detection API.
+The model's checkpoints are [publicly available](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md) as a part of the [TensorFlow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection).
 
 ## Metrics
-Metric	Value	Outputs
-mAP on COCO 2017 test set	37.1	Boxes
+| Metric | Value | Outputs |
+| :---         | :---         | :---         | 
+| mAP on COCO 2017 test   | 37.1     | Boxes    |
+
