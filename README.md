@@ -10,10 +10,12 @@ An example detection result is shown below.![od_no_keypoints](https://user-image
 
 ## Example use
 # Apply image detector on a single image.
-detector = hub.load("https://tfhub.dev/tensorflow/faster_rcnn/resnet101_v1_1024x1024/1")
-detector_output = detector(image_tensor)
-class_ids = detector_output["detection_classes"]
 
+```python
+  detector = hub.load("https://tfhub.dev/tensorflow/faster_rcnn/resnet101_v1_1024x1024/1")
+  detector_output = detector(image_tensor)
+  class_ids = detector_output["detection_classes"]
+```
 
 ## Inputs
 A three-channel image of variable size - the model does NOT support batching. The input tensor is a tf.uint8 tensor with shape [1, height, width, 3] with values in [0, 255].
