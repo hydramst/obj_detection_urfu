@@ -1,5 +1,9 @@
+!pip install -U "tensorflow>=2.5"
+!pip install tensorflow-object-detection-api
+
 import os
 import pathlib
+import requests
 
 import matplotlib
 import matplotlib.pyplot as plt
@@ -18,7 +22,7 @@ from object_detection.utils import label_map_util
 from object_detection.utils import visualization_utils as viz_utils
 from object_detection.utils import ops as utils_ops
 
-tf.get_logger().setLevel('ERROR')
+image_path = 'https://upload.wikimedia.org/wikipedia/commons/0/09/The_smaller_British_birds_%288053836633%29.jpg'
 
 def load_image_into_numpy_array(path):
   image = None
@@ -35,17 +39,9 @@ def load_image_into_numpy_array(path):
   return np.array(image.getdata()).reshape(
       (1, im_height, im_width, 3)).astype(np.uint8)
 
-
 MODELS_path = 'https://tfhub.dev/tensorflow/centernet/resnet101v1_fpn_512x512/1'
 
-PATH_TO_LABELS = './labels/mscoco_label_map.pbtxt'
-category_index = label_map_util.create_category_index_from_labelmap(PATH_TO_LABELS, use_display_name=True)
-
-
-image_path = #Сюда ссылку на картинку
 image_np = load_image_into_numpy_array(image_path)
-
 hub_model = hub.load(MODELS_path) #loading model
-
 # running inference
-results = hub_model(image_np)
+result = hub_model(image_np)
