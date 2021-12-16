@@ -9,7 +9,7 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    return "This is a image detection model"
+    return "This is an image detection model"
 
 @app.post("/predict/")
 def predict(item: Item):
