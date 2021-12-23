@@ -5,7 +5,8 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import tensorflow_hub as hub
 
-hub_model = hub.load('model/')
+model_url = 'https://tfhub.dev/tensorflow/centernet/resnet101v1_fpn_512x512/1'
+hub_model = hub.load(model_url) #hub.load('model/')
 
 class Item(BaseModel):
     link: str
